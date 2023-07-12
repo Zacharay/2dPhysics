@@ -8,6 +8,7 @@ enum Shape{
 };
 
 class Object{
+public:
     Vector2 position;
     int shape;
 public:
