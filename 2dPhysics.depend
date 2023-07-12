@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1689187289 source:/home/zachary/Projects/2dPhysics/render.cpp
+	<SFML/Graphics.hpp>
+
+1689187345 source:/home/zachary/Projects/2dPhysics/main.cpp
+	"render.h"
+
+1689187312 /home/zachary/Projects/2dPhysics/render.h
+
+1689187345 source:/home/zachary/Projects/2dPhysics/src/main.cpp
+	"render.h"
+
+1689187312 /home/zachary/Projects/2dPhysics/src/render.h
+
+1689191196 source:/home/zachary/Projects/2dPhysics/src/Physics/object.cpp
+	"object.h"
+
+1689188558 source:/home/zachary/Projects/2dPhysics/src/Physics/vector.cpp
+
+1689191208 source:/home/zachary/Projects/2dPhysics/src/simulation.cpp
+	"simulation.h"
+
+1689188733 source:/home/zachary/Projects/2dPhysics/src/render.cpp
+	<SFML/Graphics.hpp>
+
+1689191186 /home/zachary/Projects/2dPhysics/src/Physics/object.h
+	"vector.h"
+
+1689188951 /home/zachary/Projects/2dPhysics/src/Physics/vector.h
+
+1689191217 /home/zachary/Projects/2dPhysics/src/simulation.h
+	"Physics/object.h"
+
