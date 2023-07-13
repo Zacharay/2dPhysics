@@ -3,6 +3,8 @@
 #include "simulation.h"
 #include <iostream>
 #include <chrono>
+#include "globals.h"
+#include "ctime"
 
 float GetCurrentTime()
 {
@@ -23,7 +25,7 @@ void renderObjects(Object **objectList,int numOfObjects,sf::RenderWindow *window
             {
                 circle.setFillColor(sf::Color(255,255,0));
             }
-            circle.setRadius(5);
+            circle.setRadius(obj->radius);
             circle.setPosition(obj->positionCurrent.x,obj->positionCurrent.y);
             window->draw(circle);
 
@@ -41,15 +43,16 @@ void render(sf::RenderWindow *window,Simulation *simulation)
 
 void gameLoop()
 {
-    sf::RenderWindow window(sf::VideoMode(1600,1080,64), "SFML Window");
+    sf::RenderWindow window(sf::VideoMode(WINDOW_WIDTH,WINDOW_HEIGHT), "SFML Window");
 
 
     Simulation simulation;
     float previousTime = GetCurrentTime();
     float currentTime = GetCurrentTime();
 
-
-
+    float fixedDeltaTime = 1.0f/75.0f;
+    sf::Clock clock;
+    float accumulator = 0.0f;
     while (window.isOpen())
     {
 
@@ -63,15 +66,23 @@ void gameLoop()
         previousTime = currentTime;
         currentTime = GetCurrentTime();
 
+        sf::Time deltaTime = clock.restart();
+        accumulator += deltaTime.asSeconds();
+        while (accumulator >= fixedDeltaTime)
+        {
+            // Update the simulation using the fixed time step
+            // ...
+            simulation.Update(fixedDeltaTime);
+            accumulator -= fixedDeltaTime;
+        }
 
-
-        float deltaTime = currentTime-previousTime;
+        /*float deltaTime = currentTime-previousTime;
         if(deltaTime>0.15f)
         {
             deltaTime= 0.15f;
-        }
+        }*/
 
-        simulation.Update(deltaTime);
+
 
 
 

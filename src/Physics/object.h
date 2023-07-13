@@ -11,12 +11,12 @@ class Object{
 public:
     Vector2 positionCurrent;
     Vector2 positionOld;
-    Vector2 acceleration;
+    float radius =10;
 
     int shape;
 public:
     Object(Vector2 pos,int shape);
     void updatePosition(float deltaTime);
-    void accelerate(Vector2 acc);
+
 };
 

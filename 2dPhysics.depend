@@ -12,28 +12,36 @@
 
 1689243951 /home/zachary/Projects/2dPhysics/src/render.h
 
-1689257286 source:/home/zachary/Projects/2dPhysics/src/Physics/object.cpp
+1689266548 source:/home/zachary/Projects/2dPhysics/src/Physics/object.cpp
 	"object.h"
+	"../globals.h"
 
 1689250689 source:/home/zachary/Projects/2dPhysics/src/Physics/vector.cpp
 	"vector.h"
 
-1689257559 source:/home/zachary/Projects/2dPhysics/src/simulation.cpp
+1689266598 source:/home/zachary/Projects/2dPhysics/src/simulation.cpp
 	"simulation.h"
+	"globals.h"
 	"iostream"
 
-1689257392 source:/home/zachary/Projects/2dPhysics/src/render.cpp
+1689265558 source:/home/zachary/Projects/2dPhysics/src/render.cpp
 	<SFML/Graphics.hpp>
 	"Physics/object.h"
 	"simulation.h"
 	<iostream>
 	<chrono>
+	"globals.h"
+	"ctime"
 
-1689250896 /home/zachary/Projects/2dPhysics/src/Physics/object.h
+1689265544 /home/zachary/Projects/2dPhysics/src/Physics/object.h
 	"vector.h"
 
 1689250678 /home/zachary/Projects/2dPhysics/src/Physics/vector.h
 
-1689251851 /home/zachary/Projects/2dPhysics/src/simulation.h
+1689260317 /home/zachary/Projects/2dPhysics/src/simulation.h
 	"Physics/object.h"
+
+1689261498 /home/zachary/Projects/2dPhysics/src/globals.h
+
+1689260878 source:/home/zachary/Projects/2dPhysics/src/globals.cpp
 

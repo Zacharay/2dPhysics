@@ -15,4 +15,5 @@ public:
     ~Simulation();
 private:
     void applyGravity(Object *obj);
+    void checkBoundaries();
 };
