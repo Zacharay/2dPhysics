@@ -11,5 +11,8 @@ public:
     Simulation();
     void createObject(Vector2 pos,int shape);
     void spawnObjects();
+    void Update(float deltaTime);
     ~Simulation();
+private:
+    void applyGravity(Object *obj);
 };

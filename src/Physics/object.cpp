@@ -2,12 +2,29 @@
 
 Object::Object(Vector2 pos,int shape)
 {
-    position.x = pos.x;
-    position.y = pos.y;
+    positionCurrent.x = pos.x;
+    positionCurrent.y = pos.y;
+    positionOld.x = pos.x;
+    positionOld.y = pos.y;
+    acceleration.x = 0.0f;
+    acceleration.y = 0.0f;
+
     this->shape = shape;
 }
-Object::Object()
+
+void Object::updatePosition(float deltaTime)
 {
-    position.x = 0;
-    position.y = 0;
+    Vector2 velocity = positionCurrent-positionOld;
+
+
+    positionOld = positionCurrent;
+    positionCurrent = positionCurrent+velocity+acceleration*deltaTime*deltaTime;
+
+    acceleration.x = 0.0f;
+    acceleration.y = 0.0f;
 }
+void Object::accelerate(Vector2 acc)
+{
+    acceleration = acceleration+acc;
+}
+

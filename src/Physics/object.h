@@ -9,10 +9,14 @@ enum Shape{
 
 class Object{
 public:
-    Vector2 position;
+    Vector2 positionCurrent;
+    Vector2 positionOld;
+    Vector2 acceleration;
+
     int shape;
 public:
     Object(Vector2 pos,int shape);
-    Object();
+    void updatePosition(float deltaTime);
+    void accelerate(Vector2 acc);
 };
 

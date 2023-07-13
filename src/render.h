@@ -1,3 +1,3 @@
 #pragma once
 
-void renderLoop();
+void gameLoop();

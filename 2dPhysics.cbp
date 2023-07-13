@@ -13,7 +13,16 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="/usr/include/SFML" />
+					<Add directory="src/Physics" />
 				</Compiler>
+				<Linker>
+					<Add library="sfml-graphics" />
+					<Add library="sfml-window" />
+					<Add library="sfml-system" />
+					<Add directory="/usr/lib" />
+					<Add directory="src/Physics" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/2dPhysics" prefix_auto="1" extension_auto="1" />
@@ -32,7 +41,15 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="main.cpp" />
+		<Unit filename="src/Physics/object.cpp" />
+		<Unit filename="src/Physics/object.h" />
+		<Unit filename="src/Physics/vector.cpp" />
+		<Unit filename="src/Physics/vector.h" />
+		<Unit filename="src/main.cpp" />
+		<Unit filename="src/render.cpp" />
+		<Unit filename="src/render.h" />
+		<Unit filename="src/simulation.cpp" />
+		<Unit filename="src/simulation.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
