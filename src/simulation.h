@@ -15,5 +15,6 @@ public:
     ~Simulation();
 private:
     void applyGravity(Object *obj);
-    void checkBoundaries();
+    void findCollisions();
+    bool collide(Object *obj1,Object *obj2);
 };

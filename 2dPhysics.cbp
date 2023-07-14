@@ -31,9 +31,16 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="/usr/include/SFML" />
+					<Add directory="src/Physics" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add library="sfml-graphics" />
+					<Add library="sfml-window" />
+					<Add library="sfml-system" />
+					<Add directory="/usr/lib" />
+					<Add directory="src/Physics" />
 				</Linker>
 			</Target>
 		</Build>
@@ -45,6 +52,8 @@
 		<Unit filename="src/Physics/object.h" />
 		<Unit filename="src/Physics/vector.cpp" />
 		<Unit filename="src/Physics/vector.h" />
+		<Unit filename="src/globals.cpp" />
+		<Unit filename="src/globals.h" />
 		<Unit filename="src/main.cpp" />
 		<Unit filename="src/render.cpp" />
 		<Unit filename="src/render.h" />

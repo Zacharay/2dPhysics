@@ -21,10 +21,9 @@ void renderObjects(Object **objectList,int numOfObjects,sf::RenderWindow *window
         if(obj->shape==circle)
         {
             sf::CircleShape circle;
-            if(i<10)
-            {
-                circle.setFillColor(sf::Color(255,255,0));
-            }
+
+            circle.setOutlineColor(sf::Color(0,0,0));
+            circle.setOutlineThickness(2);
             circle.setRadius(obj->radius);
             circle.setPosition(obj->positionCurrent.x,obj->positionCurrent.y);
             window->draw(circle);
