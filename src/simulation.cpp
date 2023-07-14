@@ -18,11 +18,11 @@ void Simulation::createObject(Vector2 pos,int shape)
 }
 void Simulation::spawnObjects()
 {
-    for(int i=1;i<= 2;i++)
+    for(int i=1;i<= 30;i++)
     {
         Vector2 pos;
-        pos.x = 100+90*i;
-        pos.y = 200;
+        pos.x = 10*i;
+        pos.y = 10*i;
         createObject(pos,circle);
     }
 }
@@ -31,7 +31,7 @@ void Simulation::Update(float deltaTime){
         {
             Object *obj = objectList[i];
             findCollisions();
-            //obj->updatePosition(deltaTime);
+            obj->updatePosition(deltaTime);
         }
 
 
@@ -45,7 +45,17 @@ bool Simulation::collide(Object *obj1,Object *obj2)
     pow((obj1->positionCurrent.y-obj2->positionCurrent.y),2));
     double sumOfRadiuses = obj1->radius+obj2->radius;
     if(distanceFromCenters<sumOfRadiuses){
-        std::cout<<"collide"<<std::endl;
+
+        Vector2 collision_axis;
+        collision_axis.x = obj1->positionCurrent.x - obj2->positionCurrent.x;
+        collision_axis.y = obj1->positionCurrent.y - obj2->positionCurrent.y;
+        Vector2 n;
+        n.x = collision_axis.x / distanceFromCenters;
+        n.y = collision_axis.y / distanceFromCenters;
+        obj1->positionCurrent = obj1->positionCurrent+ n*0.5;
+
+        obj2->positionCurrent = obj2->positionCurrent- n*0.5;
+        std::cout<<n.x<<" "<<n.y<<std::endl;
         return true;
     }
     else return false;

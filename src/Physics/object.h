@@ -11,7 +11,7 @@ class Object{
 public:
     Vector2 positionCurrent;
     Vector2 positionOld;
-    float radius =50;
+    float radius =10;
 
     int shape;
 public:
